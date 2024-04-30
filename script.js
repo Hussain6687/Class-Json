@@ -1,41 +1,5 @@
 'strict mode';
 
-// const list = document.getElementById('myList');
-// const rate = document.getElementById('rate');
-// const ItemList = {
-//   pname: 'Celbex 250mg Caps',
-//   packsize: '12tabs',
-//   Tradeprize: 180,
-//   RetialPrize: 240,
-// };
-// const ItemList2 = {
-//   pname: 'Xplendid 5mg Caps',
-//   packsize: '12tabs',
-//   Tradeprize: 140,
-//   RetialPrize: 200,
-// };
-
-// const Items = [ItemList, ItemList2];
-// let qty = 2;
-// Items.forEach(function (item, i) {
-//   const pname = `${i + 1} ${item.pname}`;
-//   const amount = `${item.Tradeprize * qty}`;
-//   console.log(pname, amount);
-// });
-// Items.forEach(function (item) {
-//   const lists = `
-//   <select id="myList">
-
-//   <option>${item.pname}</option>;
-//   </select
-//   >`;
-//   // const rate = `${item.Tradeprize}`;
-//   // console.log(rate);
-//   list.insertAdjacentHTML('afterbegin', lists);
-//   if (list.value === item.pname) {
-//     rate.textContent = item.Tradeprize;
-//   }
-// });
 const Prod_list = {
   product: [
     {
@@ -86,20 +50,3 @@ Prod_list.product.forEach((pro, i) => {
 
   productListContainer.appendChild(prodiv);
 });
-
-// // let idname = document.getElementById('product-id');
-// let img = document.getElementById('image');
-
-// Prod_list.product.forEach(function (product) {
-//   console.log(product.name);
-//   // const idname = document.getElementById('product-id');
-//   const ProName = document.createElement('div');
-//   ProName.classList.add;
-//   ('jsonf');
-//   const node = document.getElementById('product-id');
-//   ProName.appendChild(node);
-//   // ProName.innerHTML = product.name;
-//   // idname.prepend(ProName);
-
-//   // idname.appendChild(product.name);
-// });
