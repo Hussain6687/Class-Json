@@ -35,7 +35,7 @@ const productListContainer = document.getElementById('product-list');
 //   // Append the product div to the container
 //   productListContainer.appendChild(productDiv);
 // });
-Prod_list.product.forEach((pro, i) => {
+Prod_list.product.forEach(function(pro, i) {
   const heading = document.createElement('h3');
   const prodiv = document.createElement('div');
   const product = document.createElement('p');
@@ -50,3 +50,21 @@ Prod_list.product.forEach((pro, i) => {
 
   productListContainer.appendChild(prodiv);
 });
+document.addEventListener('DOMContentLoaded',()=>{
+  fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json())
+  .then(data =>{
+    const userlist = document.getElementById('user-data')
+    data.forEach(user =>{
+      const li =document.createElement('li');
+
+      const li2 =document.createElement('p');
+      li.textContent = `Name: ${user.name}, ${user.email},City: ${user.address.city},`
+      li2.textContent = `${user.phone}`
+      userlist.appendChild(li2)
+      userlist.appendChild(li)
+    })
+
+  })
+  .catch(error=> console.error('Error while fetching the Data'))
+})
+
