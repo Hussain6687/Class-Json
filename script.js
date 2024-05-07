@@ -35,36 +35,66 @@ const productListContainer = document.getElementById('product-list');
 //   // Append the product div to the container
 //   productListContainer.appendChild(productDiv);
 // });
-Prod_list.product.forEach(function(pro, i) {
-  const heading = document.createElement('h3');
-  const prodiv = document.createElement('div');
-  const product = document.createElement('p');
-  const image = document.createElement('p');
-  heading.textContent = `----ID ${pro.id}-----`;
-  product.textContent = `Name: ${pro.name}`;
-  image.textContent = `Price: ${pro.price}`;
-  prodiv.classList.add('product');
-  prodiv.appendChild(heading);
-  prodiv.appendChild(product);
-  prodiv.appendChild(image);
+// Prod_list.product.forEach(function(pro, i) {
+//   const heading = document.createElement('h3');
+//   const prodiv = document.createElement('div');
+//   const product = document.createElement('p');
+//   const image = document.createElement('p');
+//   heading.textContent = `----ID ${pro.id}-----`;
+//   product.textContent = `Name: ${pro.name}`;
+//   image.textContent = `Price: ${pro.price}`;
+//   prodiv.classList.add('product');
+//   prodiv.appendChild(heading);
+//   prodiv.appendChild(product);
+//   prodiv.appendChild(image);
 
-  productListContainer.appendChild(prodiv);
-});
-document.addEventListener('DOMContentLoaded',()=>{
-  fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json())
-  .then(data =>{
-    const userlist = document.getElementById('user-data')
-    data.forEach(user =>{
-      const li =document.createElement('li');
+//   productListContainer.appendChild(prodiv);
+// });
 
-      const li2 =document.createElement('p');
-      li.textContent = `Name: ${user.name}, ${user.email},City: ${user.address.city},`
-      li2.textContent = `${user.phone}`
-      userlist.appendChild(li2)
-      userlist.appendChild(li)
+document.addEventListener('DOMContentLoaded'),()=>{
+  fetch('Film.JSON').then(res => res.json()).then(data =>{
+    const flimdiv = document.getElementById('film-div')
+    data.forEach(flim =>{
+     const p = createElement('p');
+     p.textContent= `Flim: ${flim.Title}`
+     flimdiv.appendChild(p);
+
     })
-
   })
-  .catch(error=> console.error('Error while fetching the Data'))
-})
+  .catch(error => console.error('error'))
+}
+// document.addEventListener('DOMContentLoaded',()=>{
+//   fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json())
+//   .then(data =>{
+//     const userlist = document.getElementById('user-data')
+//     data.forEach(user =>{
+//       const li =document.createElement('li');
+
+//       const li2 =document.createElement('p');
+//       li.textContent = `Name: ${user.name}, ${user.email},City: ${user.address.city},`
+//       li2.textContent = `${user.phone}`
+//       userlist.classList.add('align');
+//       userlist.appendChild(li2)
+//       userlist.appendChild(li)
+//     })
+
+//   })
+//   .catch(error=> console.error('Error while fetching the Data'))
+// })
+
+
+
+
+const user = {
+  name:"",
+  class: 2,
+  age: 10,
+}
+
+console.log(user);
+const getvalue = prompt('here your name please');
+user.name = getvalue;
+console.log(user.name);
+console.log(user);
+
 
